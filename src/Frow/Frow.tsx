@@ -6,8 +6,6 @@ import { CSSSAtributes } from '../typings';
 import { getRowClassNames, setDebugStyles } from './useStyles';
 import './rowlStyles.css';
 
-export const isBrowser = typeof window !== 'undefined';
-
 interface Props {
   /** Horizontal alignment for all the "Cols" in this "Row" */
   hAlign?: 'center' | 'start' | 'end';
@@ -36,7 +34,7 @@ interface Props {
 export function Frow(props: Props) {
   // -----------------------CONSTS, HOOKS, STATES
   const { children, hSpace, vSpace, debug, className, style: styledProp } = props;
-  const debugStyles = isBrowser && debug && setDebugStyles();
+  const debugStyles = debug && setDebugStyles();
   const classNames = getRowClassNames({ hSpace, vSpace, debugClassName: debugStyles });
 
   const style: CSSSAtributes = {
