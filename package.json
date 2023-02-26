@@ -1,6 +1,6 @@
 {
   "name": "react-forge-grid",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simpler and faster way to accommodate information within the layout area, so we set the area in percentage (100%) similar to the 24-section layout area of Ant design or the 12 colums of bootstrap, you can think it as a 100 col system. To ensure a high level of visual comfort.",
   "author": "sudo-boss ",
   "license": "MIT",

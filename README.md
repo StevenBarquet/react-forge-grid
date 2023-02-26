@@ -22,7 +22,7 @@ npm install --save react-forge-grid
 ```tsx
 import React, { Component } from 'react'
 import {Frow, Fcol} from 'react-forge-grid'
-import 'react-forge-grid/css/index.css'; // Import the styles!!!
+import 'react-forge-grid/dist/css/index.css'; // Import the styles!!!
 
 function BasicUsage() {
   // -----------------------RENDER

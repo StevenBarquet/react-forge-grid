@@ -1,10 +1,11 @@
 // ---Dependencies
 import React, { useEffect, useState } from 'react';
 // ---Types
-import { CSSSAtributes, FrowProps, UniqueCSS } from '../typings';
+import { CSSSAtributes, UniqueCSS } from '../typings';
 // ---Styles
 import { getRowClassNames, setDebugStyles } from './useNextStyles';
 import './rowlStyles.css';
+import { FrowProps } from './Wrapper';
 
 export const isBrowser = typeof window !== 'undefined';
 

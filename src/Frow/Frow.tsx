@@ -1,9 +1,10 @@
 // ---Dependencies
 import React from 'react';
 // ---Types
-import { CSSSAtributes, FrowProps } from '../typings';
+import { CSSSAtributes } from '../typings';
 // ---Styles
 import { getRowClassNames, setDebugStyles } from './useStyles';
+import { FrowProps } from './Wrapper';
 import './rowlStyles.css';
 
 
