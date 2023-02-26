@@ -1,11 +1,12 @@
 // ---Dependencies
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // ---Types
-import { CSSSAtributes, FrowProps } from '../typings';
+import { CSSSAtributes, FrowProps, UniqueCSS } from '../typings';
 // ---Styles
-import { getRowClassNames, setDebugStyles } from './useStyles';
+import { getRowClassNames, setDebugStyles } from './useNextStyles';
 import './rowlStyles.css';
 
+export const isBrowser = typeof window !== 'undefined';
 
 /**
  * Row Component: Control all the "Col" components, it
@@ -14,10 +15,15 @@ import './rowlStyles.css';
  * between your "Col", etc.
  * @param {FrowProps} props Properties that controls some global behavior in all your grid
  */
-export function Frow(props: FrowProps) {
+export function NextFrow(props: FrowProps) {
   // -----------------------CONSTS, HOOKS, STATES
   const { children, hSpace, vSpace, debug, className, style: styledProp } = props;
-  const debugStyles = debug && setDebugStyles();
+  const [debugStyles, setDebug] = useState<UniqueCSS | undefined>(undefined);
+  useEffect(()=>{
+    if(isBrowser && debug){
+      setDebug(setDebugStyles())
+    }
+  },[isBrowser, debug])
   const classNames = getRowClassNames({ hSpace, vSpace, debugClassName: debugStyles });
 
   const style: CSSSAtributes = {
@@ -37,5 +43,3 @@ export function Frow(props: FrowProps) {
     </React.Fragment>
   );
 }
-
-
