@@ -1,2 +1,2 @@
 export { Fcol } from './Fcol/Fcol';
-export { Frow } from './Frow/Frow';
+export { Wrapper as Frow } from './Frow/Wrapper';

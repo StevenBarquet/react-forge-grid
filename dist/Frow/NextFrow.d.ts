@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { FrowProps } from '../typings';
 import './rowlStyles.css';
+export declare const isBrowser: boolean;
 /**
  * Row Component: Control all the "Col" components, it
  * should only contain "Col"s as child components and allows
@@ -8,4 +9,4 @@ import './rowlStyles.css';
  * between your "Col", etc.
  * @param {FrowProps} props Properties that controls some global behavior in all your grid
  */
-export declare function Frow(props: FrowProps): JSX.Element;
+export declare function NextFrow(props: FrowProps): JSX.Element;

@@ -1,6 +1,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -82,7 +83,7 @@ function Fcol(props) {
     grid = _objectWithoutPropertiesLoose(props, _excluded);
   var classNames = getColClassNames(_extends({}, grid));
   var fullClassNames = className ? classNames + " " + className : classNames;
-  return React.createElement("div", {
+  return React__default.createElement("div", {
     className: fullClassNames,
     style: style
   }, children);
@@ -143,12 +144,83 @@ function Frow(props) {
     verticalAlign: (props === null || props === void 0 ? void 0 : props.vAlign) || 'bottom'
   }, styledProp);
   var fullClassNames = className ? classNames + " " + className : classNames;
-  return React.createElement(React.Fragment, null, debugStyles ? React.createElement("style", null, debugStyles.styles) : null, React.createElement("div", {
+  return React__default.createElement(React__default.Fragment, null, debugStyles ? React__default.createElement("style", null, debugStyles.styles) : null, React__default.createElement("div", {
     className: fullClassNames,
     style: style
   }, children));
 }
 
+var setDebugStyles$1 = function setDebugStyles() {
+  var unique = uniqueId();
+  var parentClassName = "row-" + unique;
+  var debugStyles = "\n    ." + parentClassName + "{\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(1n){\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(4n){\n        background: #18b6f6;\n      }\n    ." + parentClassName + " .forge-col-element:nth-child(3n){\n        background: #7b0fab;\n      }\n  ";
+  return {
+    styles: debugStyles,
+    parentClassName: parentClassName
+  };
+};
+function getRowClassNames$1(props) {
+  var hSpace = props.hSpace,
+    vSpace = props.vSpace,
+    debugClassName = props.debugClassName;
+  var classNames = ['forge-row-element'];
+  var y = in10Range$1(vSpace);
+  var x = in10Range$1(hSpace);
+  classNames.push("row-space-y-" + y);
+  classNames.push("row-space-x-" + x);
+  if (debugClassName && debugClassName.parentClassName) {
+    classNames.push(debugClassName.parentClassName);
+  }
+  return classNames.join(' ');
+}
+function in10Range$1(number) {
+  if (number && number >= 0 && number <= 10) {
+    return number;
+  }
+  return 0;
+}
+
+var isBrowser = typeof window !== 'undefined';
+function NextFrow(props) {
+  var children = props.children,
+    hSpace = props.hSpace,
+    vSpace = props.vSpace,
+    debug = props.debug,
+    className = props.className,
+    styledProp = props.style;
+  var _useState = React.useState(undefined),
+    debugStyles = _useState[0],
+    setDebug = _useState[1];
+  React.useEffect(function () {
+    if (isBrowser && debug) {
+      setDebug(setDebugStyles$1());
+    }
+  }, [isBrowser, debug]);
+  var classNames = getRowClassNames$1({
+    hSpace: hSpace,
+    vSpace: vSpace,
+    debugClassName: debugStyles
+  });
+  var style = _extends({
+    display: 'block',
+    textAlign: (props === null || props === void 0 ? void 0 : props.hAlign) || 'start',
+    verticalAlign: (props === null || props === void 0 ? void 0 : props.vAlign) || 'bottom'
+  }, styledProp);
+  var fullClassNames = className ? classNames + " " + className : classNames;
+  return React__default.createElement(React__default.Fragment, null, debugStyles ? React__default.createElement("style", null, debugStyles.styles) : null, React__default.createElement("div", {
+    className: fullClassNames,
+    style: style
+  }, children));
+}
+
+var _excluded$1 = ["nextjs"];
+function Wrapper(_ref) {
+  var nextjs = _ref.nextjs,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$1);
+  if (nextjs) return React__default.createElement(NextFrow, Object.assign({}, props));
+  return React__default.createElement(Frow, Object.assign({}, props));
+}
+
 exports.Fcol = Fcol;
-exports.Frow = Frow;
+exports.Frow = Wrapper;
 //# sourceMappingURL=index.js.map
