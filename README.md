@@ -30,7 +30,7 @@ function BasicUsage() {
     <>
       <h1>Basic Usage</h1>
       <hr />
-      <Frow hSpace={2} vSpace={2} debug nextjs> {/* Active nextjs always in nextjs apps*/}
+      <Frow hSpace={2} vSpace={2} debug nextjs> {/* Active nextjs always in nextjs apps if using "debug" prop*/}
         <Fcol span={70}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, nisi. Nihil provident sunt
           tempore, exercitationem aspernatur atque eum quidem vero natus, expedita fugiat blanditiis

@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { FrowProps } from '../typings';
 import './rowlStyles.css';
+import { FrowProps } from './Wrapper';
 export declare const isBrowser: boolean;
 /**
  * Row Component: Control all the "Col" components, it

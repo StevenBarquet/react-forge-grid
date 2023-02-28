@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { FrowProps } from '../typings';
+import { FrowProps } from './Wrapper';
 import './rowlStyles.css';
 /**
  * Row Component: Control all the "Col" components, it
