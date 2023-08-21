@@ -7,14 +7,12 @@ export interface FrowProps {
   hAlign?: 'center' | 'start' | 'end';
   /** Vertical alignment for all the "Cols" in this "Row" */
   vAlign?: 'top' | 'middle' | 'bottom';
-  /** Horizontal space in px from 0 - 10 between all the "Cols" in this "Row" */
+  /** Horizontal space in px from 0 - 50 between all the "Cols" in this "Row" */
   hSpace?: number;
-  /** Vertical space in px from 0 - 10 between all the "Cols" in this "Row" */
+  /** Vertical space in px from 0 - 50 between all the "Cols" in this "Row" */
   vSpace?: number;
   /** Useful property for development, gives background colors to your "Row" and "Cols" to build easier your layout */
   debug?: boolean;
-  /** Allows debug in nextjs App */
-  nextjs?: boolean;
   /** "ClassName" css selector */
   className?: string;
   /** CSS inline Object */
@@ -22,7 +20,8 @@ export interface FrowProps {
   /** Cols as children */
   children?: ReactNode;
 }
-export function Wrapper({ nextjs, ...props }: FrowProps) {
-  if (nextjs) return <NextFrow {...props} />
+export function Wrapper(props: FrowProps) {
+  const isNextjs = typeof window === 'undefined' && props.debug
+  if (isNextjs) return <NextFrow {...props} />
   return <Frow {...props} />
 }

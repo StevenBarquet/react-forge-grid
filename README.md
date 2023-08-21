@@ -2,7 +2,7 @@
 
 > A simpler and faster way to accommodate information within the layout area, so we set the area in percentage (100%) similar to the 24-section layout area of Ant design or the 12 colums of bootstrap, you can think it as a 100 col system. To ensure a high level of visual comfort.
 
->Library in which its main objective is to have the greatest control of the behavior for the grid in qwik.
+>Library in which its main objective is to have the greatest control of the behavior for the grid in react.
 
 >Row and Col are used so it will be very familiar if you have already interacted with Ant Desing, Boostrap, etc.
 the Grid is handled by percentage with 100% referring to the maximum.
@@ -14,23 +14,41 @@ the Grid is handled by percentage with 100% referring to the maximum.
 ## Install
 
 ```bash
-npm install --save react-forge-grid
+npm i -E react-forge-grid
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from 'react' 
 import {Frow, Fcol} from 'react-forge-grid'
-import 'react-forge-grid/dist/css/index.css'; // Import the styles!!!
 
 function BasicUsage() {
   // -----------------------RENDER
   return (
     <>
+     <h1>MVariant Usage</h1>
+      <hr />
+      <Mrow debug> {/* active debug tool to see the grid elements in colors*/}
+        <Mcol span={70}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, nisi.
+          Nihil provident sunt tempore, exercitationem aspernatur atque eum
+          quidem vero natus, expedita fugiat blanditiis numquam possimus beatae!
+          Assumenda, dignissimos consequatur.
+        </Mcol>
+        <Mcol span={20}>20%</Mcol>
+        <Mcol span={10}>10%</Mcol>
+        <Mcol span={25}>25%</Mcol>
+        <Mcol span={25}>25%</Mcol>
+        <Mcol span={25}>25%</Mcol>
+        <Mcol span={25}>25%</Mcol>
+        <Mcol span={40}>40%</Mcol>
+        <Mcol span={60}>60%</Mcol>
+      </Mrow>
+      <br />
       <h1>Basic Usage</h1>
       <hr />
-      <Frow hSpace={2} vSpace={2} debug nextjs> {/* Active nextjs always in nextjs apps if using "debug" prop*/}
+      <Frow debug>
         <Fcol span={70}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, nisi. Nihil provident sunt
           tempore, exercitationem aspernatur atque eum quidem vero natus, expedita fugiat blanditiis
@@ -49,9 +67,37 @@ function BasicUsage() {
   );
 }
 ```
+![Grid for react-forge-grid](https://github.com/sudo-boss/react-forge-grid/blob/master/image.png?raw=true)
+
+## Import the styles if not working!!!
+import 'node_modules/react-forge-grid/lib/build/(some css file).css'; // Import the styles if not working!!!
+
+### If using scss and vite or similar add the following in your vite.config.ts
+
+```ts
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  // ...other config
+  resolve: {
+    alias: {
+      '@node_modules': '/path/to/your/node_modules'
+    }
+  }
+});
+```
+### Then in your index.scss or similar
+```scss
+@import './theme.scss';
+@import './global.scss'; // Generic imports
+@import '@node_modules/react-forge-grid/lib/build/(some css file).css';
+// or
+@import '~react-forge-grid/dist/css/index.css'; // if not using vite
+```
+
 
 ## Usage examples and donations:
--Check the docs and examples at [https://qwik.forgemytech.com/](https://qwik.forgemytech.com/)
+-Check the docs and examples (need to be updated but will help) at [https://qwik.forgemytech.com/](https://qwik.forgemytech.com/)
 
 ## License
 

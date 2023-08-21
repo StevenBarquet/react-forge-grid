@@ -1,2 +1,3 @@
-export { Fcol } from './Fcol/Fcol';
-export { Wrapper as Frow } from './Frow/Wrapper';
+export { Fcol, FcolProps } from './Fcol/Fcol';
+export { Wrapper as Frow, FrowProps } from './Frow/Wrapper';
+export { GridSystem } from './Fcol/useStyles';
