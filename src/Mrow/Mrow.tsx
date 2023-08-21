@@ -23,11 +23,11 @@ export function Mrow(props: MrowProps) {
   const fullClassNames = className ? `${classNames} ${className}` : classNames;
   // -----------------------RENDER
   return (
-    <>
+    <React.Fragment>
       {debugStyles ? <style>{debugStyles.styles}</style> : null}
       <div className={fullClassNames} style={style}>
         {children}
       </div>
-    </>
+    </React.Fragment>
   );
 };

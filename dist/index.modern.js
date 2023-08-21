@@ -95,7 +95,7 @@ function uniqueId() {
 var setDebugStyles = function setDebugStyles() {
   var unique = uniqueId();
   var parentClassName = "row-" + unique;
-  var debugStyles = "\n    ." + parentClassName + "{\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(1n){\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(4n){\n        background: #18b6f6;\n      }\n    ." + parentClassName + " .forge-col-element:nth-child(3n){\n        background: #7b0fab;\n      }\n  ";
+  var debugStyles = "\n    ." + parentClassName + " {\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+1) {\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+2) {\n      background: #18b6f6;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+3) {\n      background: #7b0fab;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+4) {\n      background: #e600d3;  /* A\xF1ade nuevos colores aqu\xED */\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+5) {\n      background: #ffa500;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+6) {\n      background: #006080;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+7) {\n      background: #fab7fa;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+8) {\n      background: #ff4500;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+9) {\n      background: #9acd32;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+10) {\n      background: #bb6af6;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+11) {\n      background: #c3c6be;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+12) {\n      background: #2be2d3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+13) {\n      background: #7fff00;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+14) {\n      background: #ffb32f;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+15) {\n      background: #ffd700;\n    }\n";
   return {
     styles: debugStyles,
     parentClassName: parentClassName
@@ -106,8 +106,8 @@ function getRowClassNames(props) {
     vSpace = props.vSpace,
     debugClassName = props.debugClassName;
   var classNames = ['forge-row-element'];
-  var y = in10Range(vSpace);
-  var x = in10Range(hSpace);
+  var y = in50Range(vSpace);
+  var x = in50Range(hSpace);
   classNames.push("row-space-y-" + y);
   classNames.push("row-space-x-" + x);
   if (debugClassName && debugClassName.parentClassName) {
@@ -115,8 +115,8 @@ function getRowClassNames(props) {
   }
   return classNames.join(' ');
 }
-function in10Range(number) {
-  if (number && number >= 0 && number <= 10) {
+function in50Range(number) {
+  if (number && number >= 0 && number <= 50) {
     return number;
   }
   return 0;
@@ -150,7 +150,7 @@ function Frow(props) {
 var setDebugStyles$1 = function setDebugStyles() {
   var unique = uniqueId();
   var parentClassName = "row-" + unique;
-  var debugStyles = "\n    ." + parentClassName + "{\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(1n){\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(4n){\n        background: #18b6f6;\n      }\n    ." + parentClassName + " .forge-col-element:nth-child(3n){\n        background: #7b0fab;\n      }\n  ";
+  var debugStyles = "\n    ." + parentClassName + " {\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+1) {\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+2) {\n      background: #18b6f6;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+3) {\n      background: #7b0fab;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+4) {\n      background: #e600d3;  /* A\xF1ade nuevos colores aqu\xED */\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+5) {\n      background: #ffa500;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+6) {\n      background: #006080;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+7) {\n      background: #fab7fa;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+8) {\n      background: #ff4500;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+9) {\n      background: #9acd32;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+10) {\n      background: #bb6af6;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+11) {\n      background: #c3c6be;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+12) {\n      background: #2be2d3;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+13) {\n      background: #7fff00;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+14) {\n      background: #ffb32f;\n    }\n    ." + parentClassName + " .forge-col-element:nth-child(15n+15) {\n      background: #ffd700;\n    }\n";
   return {
     styles: debugStyles,
     parentClassName: parentClassName
@@ -161,8 +161,8 @@ function getRowClassNames$1(props) {
     vSpace = props.vSpace,
     debugClassName = props.debugClassName;
   var classNames = ['forge-row-element'];
-  var y = in10Range$1(vSpace);
-  var x = in10Range$1(hSpace);
+  var y = in50Range$1(vSpace);
+  var x = in50Range$1(hSpace);
   classNames.push("row-space-y-" + y);
   classNames.push("row-space-x-" + x);
   if (debugClassName && debugClassName.parentClassName) {
@@ -170,8 +170,8 @@ function getRowClassNames$1(props) {
   }
   return classNames.join(' ');
 }
-function in10Range$1(number) {
-  if (number && number >= 0 && number <= 10) {
+function in50Range$1(number) {
+  if (number && number >= 0 && number <= 50) {
     return number;
   }
   return 0;
@@ -210,13 +210,146 @@ function NextFrow(props) {
   }, children));
 }
 
-var _excluded$1 = ["nextjs"];
-function Wrapper(_ref) {
-  var nextjs = _ref.nextjs,
-    props = _objectWithoutPropertiesLoose(_ref, _excluded$1);
-  if (nextjs) return React.createElement(NextFrow, Object.assign({}, props));
+function Wrapper(props) {
+  var isNextjs = typeof window === 'undefined' && props.debug;
+  if (isNextjs) return React.createElement(NextFrow, Object.assign({}, props));
   return React.createElement(Frow, Object.assign({}, props));
 }
 
-export { Fcol, Wrapper as Frow };
+function getColClassNames$1(gridInfo) {
+  var responsiveCols = colWidthBalancer$1(gridInfo);
+  var classNames = ['forge-mcol-element', 'mcol'];
+  if (responsiveCols.span) {
+    classNames.push("mcol-span-" + responsiveCols.span);
+  }
+  if (responsiveCols.xs) {
+    classNames.push("mcol-xs-span-" + responsiveCols.xs);
+  }
+  if (responsiveCols.sm) {
+    classNames.push("mcol-sm-span-" + responsiveCols.sm);
+  }
+  if (responsiveCols.md) {
+    classNames.push("mcol-md-span-" + responsiveCols.md);
+  }
+  if (responsiveCols.lg) {
+    classNames.push("mcol-lg-span-" + responsiveCols.lg);
+  }
+  if (responsiveCols.xl) {
+    classNames.push("mcol-xl-span-" + responsiveCols.xl);
+  }
+  if (responsiveCols.xxl) {
+    classNames.push("mcol-xxl-span-" + responsiveCols.xxl);
+  }
+  return classNames.join(' ');
+}
+function colWidthBalancer$1(gridInfo) {
+  var span = gridInfo.span,
+    xs = gridInfo.xs,
+    sm = gridInfo.sm,
+    md = gridInfo.md,
+    lg = gridInfo.lg,
+    xl = gridInfo.xl,
+    xxl = gridInfo.xxl;
+  return {
+    span: span || xl || 100,
+    xs: xs || span || xl || 100,
+    sm: sm || span || xl || 100,
+    md: md || span || xl || 100,
+    lg: lg || span || xl || 100,
+    xl: xl || span || xl || 100,
+    xxl: xxl || span || xl || 100
+  };
+}
+
+var _excluded$1 = ["children", "className", "style"];
+function Mcol(props) {
+  var children = props.children,
+    className = props.className,
+    style = props.style,
+    grid = _objectWithoutPropertiesLoose(props, _excluded$1);
+  var classNames = getColClassNames$1(_extends({}, grid));
+  var fullClassNames = className ? classNames + " " + className : classNames;
+  return React.createElement("div", {
+    className: fullClassNames,
+    style: style
+  }, children);
+}
+
+var setDebugStyles$2 = function setDebugStyles() {
+  var unique = uniqueId();
+  var parentClassName = "row-" + unique;
+  var debugStyles = "\n    ." + parentClassName + " {\n      background: #212121;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+1) {\n      background: #0081e3;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+2) {\n      background: #18b6f6;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+3) {\n      background: #7b0fab;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+4) {\n      background: #e600d3;  /* A\xF1ade nuevos colores aqu\xED */\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+5) {\n      background: #ffa500;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+6) {\n      background: #006080;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+7) {\n      background: #fab7fa;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+8) {\n      background: #ff4500;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+9) {\n      background: #9acd32;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+10) {\n      background: #bb6af6;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+11) {\n      background: #c3c6be;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+12) {\n      background: #2be2d3;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+13) {\n      background: #7fff00;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+14) {\n      background: #ffb32f;\n    }\n    ." + parentClassName + " .forge-mcol-element:nth-child(15n+15) {\n      background: #ffd700;\n    }\n";
+  return {
+    styles: debugStyles,
+    parentClassName: parentClassName
+  };
+};
+function getRowClassNames$2(props) {
+  var space = props.space,
+    debugClassName = props.debugClassName;
+  var classNames = ['forge-row-wrapper forge-row-element'];
+  var x = in50Range$2(space);
+  classNames.push("row-space-" + x);
+  if (debugClassName && debugClassName.parentClassName) {
+    classNames.push(debugClassName.parentClassName);
+  }
+  return classNames.join(' ');
+}
+function in50Range$2(number) {
+  if (number && number >= 0 && number <= 50) {
+    return number;
+  }
+  return 0;
+}
+
+function Mrow(props) {
+  var space = props.space,
+    debug = props.debug,
+    className = props.className,
+    style = props.style,
+    children = props.children;
+  var debugStyles = debug && setDebugStyles$2();
+  var classNames = getRowClassNames$2({
+    space: space,
+    debugClassName: debugStyles
+  });
+  var fullClassNames = className ? classNames + " " + className : classNames;
+  return React.createElement(React.Fragment, null, debugStyles ? React.createElement("style", null, debugStyles.styles) : null, React.createElement("div", {
+    className: fullClassNames,
+    style: style
+  }, children));
+}
+
+function NextMrow(props) {
+  var space = props.space,
+    debug = props.debug,
+    className = props.className,
+    style = props.style,
+    children = props.children;
+  var _useState = useState(undefined),
+    debugStyles = _useState[0],
+    setDebug = _useState[1];
+  useEffect(function () {
+    if (isBrowser && debug) {
+      setDebug(setDebugStyles$2());
+    }
+  }, [isBrowser, debug]);
+  var classNames = getRowClassNames$2({
+    space: space,
+    debugClassName: debugStyles
+  });
+  var fullClassNames = className ? classNames + " " + className : classNames;
+  return React.createElement(React.Fragment, null, debugStyles ? React.createElement("style", null, debugStyles.styles) : null, React.createElement("div", {
+    className: fullClassNames,
+    style: style
+  }, children));
+}
+
+function Wrapper$1(props) {
+  var isNextjs = typeof window === 'undefined' && props.debug;
+  if (isNextjs) return React.createElement(NextMrow, Object.assign({}, props));
+  return React.createElement(Mrow, Object.assign({}, props));
+}
+
+export { Fcol, Wrapper as Frow, Mcol, Wrapper$1 as Mrow };
 //# sourceMappingURL=index.modern.js.map

@@ -1,13 +1,7 @@
 import { ReactNode } from 'react';
-export interface FrowProps {
-    /** Horizontal alignment for all the "Cols" in this "Row" */
-    hAlign?: 'center' | 'start' | 'end';
-    /** Vertical alignment for all the "Cols" in this "Row" */
-    vAlign?: 'top' | 'middle' | 'bottom';
+export interface MrowProps {
     /** Horizontal space in px from 0 - 50 between all the "Cols" in this "Row" */
-    hSpace?: number;
-    /** Vertical space in px from 0 - 50 between all the "Cols" in this "Row" */
-    vSpace?: number;
+    space?: number;
     /** Useful property for development, gives background colors to your "Row" and "Cols" to build easier your layout */
     debug?: boolean;
     /** "ClassName" css selector */
@@ -17,4 +11,4 @@ export interface FrowProps {
     /** Cols as children */
     children?: ReactNode;
 }
-export declare function Wrapper(props: FrowProps): JSX.Element;
+export declare function Wrapper(props: MrowProps): JSX.Element;
