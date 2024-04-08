@@ -90,7 +90,7 @@ export default defineConfig({
 ```scss
 @import './theme.scss';
 @import './global.scss'; // Generic imports
-@import '@node_modules/react-forge-grid/lib/build/(some css file).css';
+@import '@node_modules/react-forge-grid/dist/css/index.css';
 // or
 @import '~react-forge-grid/dist/css/index.css'; // if not using vite
 ```
